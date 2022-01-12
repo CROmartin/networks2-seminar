@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Chat App</title>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      #message-container {
+        width: 80%;
+        max-width: 1200px;
+      }
+
+      #message-container div {
+        background-color: #ccc;
+        margin: 8px;
+        padding: 5px;
+        border: solid 1px;
+      }
+
+      #message-container p {
+        background-color: #fff;
+        padding: 6px;
+        margin: 8px;
+
+        min-height: 96px;
+      }
+
+      #send-container {
+        position: fixed;
+        padding-bottom: 30px;
+        bottom: 0;
+        background-color: white;
+        max-width: 1200px;
+        width: 80%;
+        display: flex;
+      }
+
+      #message-input {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message-container"></div>
+    <form
+      style="width: 100%; display: flex; justify-content: center"
+      id="send-container"
+    >
+      <div style="display: flex; flex-direction: column; min-width: 500px">
+        <input
+          placeholder="Send to"
+          type="text"
+          id="sendto-input"
+          required
+          autocomplete="off"
+        />
+        <input
+          placeholder="Subject"
+          type="text"
+          id="title-input"
+          required
+          autocomplete="off"
+        />
+        <input
+          style="min-height: 100px"
+          placeholder="Body"
+          type="text"
+          id="message-input"
+          required
+          autocomplete="off"
+        />
+        <input
+          placeholder="Time in seconds"
+          type="number"
+          id="time-input"
+          required
+          autocomplete="off"
+        />
+      </div>
+
+      <button type="submit" id="send-button">Send email</button>
+    </form>
+  </body>
+</html>
